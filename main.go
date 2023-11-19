@@ -3,6 +3,7 @@ package main
 import (
 	"finalprojec2-kel-go/models"
 	"finalprojec2-kel-go/routers"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
