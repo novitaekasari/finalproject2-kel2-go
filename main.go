@@ -7,5 +7,18 @@ import (
 
 func main() {
 	models.ConnectDatabase()
-	routers.StartServer().Run(":8080")
+	r := routers.StartServer()
+
+	// Main router
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Welcome to Railway API",
+		})
+	})
+	
+	err := r.Run()
+	if err != nil {
+		panic(err)
+	}
+
 }
