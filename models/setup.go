@@ -12,7 +12,8 @@ func ConnectDatabase() {
 	user := "postgres"
 	password := "d-c42b5d-ABea*4a-fBBCDA*23E1AAe-"
 	dbname := "railway"
-	dsn := "host=" + host + " user=" + user + " password=" + password + " dbname=" + dbname + " port=5432 sslmode=require TimeZone=Asia/Jakarta"
+	port := "45094"
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432 sslmode=disable TimeZone=Asia/Shanghai", host, user, password, dbname)
 	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
